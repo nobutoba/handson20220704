@@ -264,11 +264,11 @@ Install dependencies
 
 ```bash
 # clone project
-git clone GITREPOURL
+git clone https://github.com/nobutoba/handson20220704
 cd your-repo-name
 
 # [OPTIONAL] create conda environment
-conda create -n myenv python=PYTHONVERSION
+conda create -n myenv python=3.9
 conda activate myenv
 
 # install requirements

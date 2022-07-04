@@ -28,7 +28,7 @@ Contents
    :hidden:
    :caption: DEVELOPMENT
 
-   GitHub Repository <GITREPOURL>
+   GitHub Repository <https://github.com/nobutoba/handson20220704>
 
 Team
 ----
@@ -38,7 +38,7 @@ Team
 License
 -------
 
-A full copy of the license can be found `on GitHub <GITREPOURL/blob/main/LICENSE>`_.
+A full copy of the license can be found `on GitHub <https://github.com/nobutoba/handson20220704/blob/main/LICENSE>`_.
 
 Indices and tables
 ------------------

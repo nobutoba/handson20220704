@@ -52,5 +52,5 @@ setup(
         "dev": read_requirements("requirements/dev-requirements.txt"),
         "sample": read_requirements("requirements/sample-requirements.txt"),
     },
-    python_requires=">=PYTHONVERSION",
+    python_requires=">=3.9",
 )
