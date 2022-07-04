@@ -1,0 +1,8 @@
+#!/bin/bash
+
+branch="$(git symbolic-ref HEAD 2>/dev/null)" || "$(git describe --contains --all HEAD)"
+
+if [[ ${branch} =~ \/*main$ ]] || [[ ${branch} =~ \/*develop$ ]]; then
+    echo "Can't commit on branch whose name contains main or develop (Edge and R&D team rule)."
+    exit 1
+fi

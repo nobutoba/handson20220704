@@ -1,0 +1,14 @@
+_target_: my_package.datamodules.image.classification.datamodule_general.ImageDataModule
+
+data_dir: ${original_work_dir}/data/datasets
+batch_size: 64
+train_val_test_split: [55_000, 5_000, 10_000]
+num_workers: 0
+pin_memory: False
+
+dataset_dirname: MNIST
+dvc_repo: git@github:arayabrain/dummy_prj_repo_mnist
+dvc_dir: data/datasets/MNIST
+dvc_rev: null
+
+dataset_cls: torchvision.datasets.MNIST

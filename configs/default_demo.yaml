@@ -1,0 +1,45 @@
+inference_api:
+  _target_: my_package.applications.image.classification.mnist_api.MNISTInferenceAPI
+
+  model:
+    _target_: my_package.models.image.simple_conv_net.SimpleConvNet
+
+# passing checkpoint path is necessary
+model_state_dict: ???
+
+gradio_inputs:
+  - sketchpad
+gradio_outputs:
+  - _target_: gradio.outputs.Label
+    num_top_classes: 5
+
+live: true
+
+original_work_dir: ${hydra:runtime.cwd}
+data_dir: ${original_work_dir}/data/
+# not to change workdir
+hydra:
+  run:
+    dir: ./
+  output_subdir: ${data_dir}
+  job_logging:
+    version: 1
+    formatters:
+      simple:
+        format: "[%(asctime)s][%(name)s][%(levelname)s] - %(message)s"
+    handlers:
+      console:
+        class: logging.StreamHandler
+        formatter: simple
+        stream: ext://sys.stdout
+      file:
+        class: logging.FileHandler
+        formatter: simple
+        # absolute file path
+        # filename: ${hydra.runtime.output_dir}/${hydra.job.name}.log
+        filename: ${original_work_dir}/logs/${hydra.job.name}.log
+    root:
+      level: INFO
+      handlers: [console, file]
+
+    disable_existing_loggers: false

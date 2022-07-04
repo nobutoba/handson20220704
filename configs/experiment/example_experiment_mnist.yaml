@@ -1,0 +1,24 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: mnist.yaml
+  - override /transforms: mnist.yaml
+  - override /model: mnist.yaml
+  - override /callbacks: default.yaml
+  - override /logger: default.yaml
+  - override /trainer: default.yaml
+  - override /logger: default.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+seed: 12345
+
+project_name: "lightning_sample"
+task_name: "exp_mnist"
+
+data_dir: ${original_work_dir}/data/${project_name}/${task_name}
+

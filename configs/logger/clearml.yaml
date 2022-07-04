@@ -1,0 +1,6 @@
+# Clearml logger
+
+clearml:
+  _target_: my_package.loggers.clearml.ClearMLLogger
+  project_name: ${project_name}
+  task_name: ${task_name}

@@ -1,0 +1,7 @@
+to_tensor:
+  _target_: torchvision.transforms.transforms.ToTensor
+normalize:
+  _target_: torchvision.transforms.transforms.Normalize
+  mean: [0.1307]
+  std: [0.3081]
+

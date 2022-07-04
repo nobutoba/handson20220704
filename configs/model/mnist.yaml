@@ -1,0 +1,22 @@
+_target_: my_package.litmodules.image.classification.litmodule_general.ImageClassificationLitModule
+
+model:
+  _target_: my_package.models.image.simple_conv_net.SimpleConvNet
+
+optimizer:
+  _partial_: True
+  _target_: torch.optim.AdamW
+  lr: 0.001
+  weight_decay: 0.0005
+
+criterion:
+  _target_: torch.nn.CrossEntropyLoss
+
+metric_train:
+  _target_: torchmetrics.classification.accuracy.Accuracy
+metric_val:
+  _target_: torchmetrics.classification.accuracy.Accuracy
+metric_test:
+  _target_: torchmetrics.classification.accuracy.Accuracy
+metric_val_best:
+  _target_: torchmetrics.MaxMetric

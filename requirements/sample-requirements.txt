@@ -1,0 +1,8 @@
+pytorch-lightning
+torchmetrics
+torchvision
+gradio
+hydra-core
+omegaconf
+clearml
+dvc[ssh]
